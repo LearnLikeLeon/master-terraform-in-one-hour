@@ -21,7 +21,11 @@ resource "aws_instance" "web_server" {
 
   ami = "ami-03c7d01cf4dedc891"
 
-  instance_type = "t2.micro"
+  #   instance_type = "t2.micro"
+
+  # Let's use the defined variable :
+
+  instance_type = var.instance_size
 
   tags = {
     Name = "My Web Server_1"
